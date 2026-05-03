@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portafolio personal de Francisco Miceli — Desarrollador Web Front-End"
+    />
+    <!-- Open Graph para LinkedIn -->
+    <meta property="og:title" content="Francisco Miceli | Portafolio" />
+    <meta
+      property="og:description"
+      content="Estudiante apasionado por el desarrollo web y el diseño de interfaces."
+    />
+    <meta property="og:type" content="website" />
+
+    <title>Francisco Miceli | Portafolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- ================================
+         HEADER / NAVEGACIÓN
+    ================================= -->
+    <header id="header">
+      <nav class="nav container">
+        <a href="#hero" class="nav__logo"
+          >FM<span class="nav__logo--dot">.</span></a
+        >
+
+        <button
+          class="nav__toggle"
+          id="nav-toggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+
+        <ul class="nav__menu" id="nav-menu" role="list">
+          <li><a href="#about" class="nav__link">Sobre mí</a></li>
+          <li><a href="#skills" class="nav__link">Habilidades</a></li>
+          <li><a href="#projects" class="nav__link">Proyectos</a></li>
+          <li><a href="#contact" class="nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ================================
+           SECCIÓN: HERO
+      ================================= -->
+      <section id="hero" class="hero">
+        <div class="hero__glow hero__glow--top" aria-hidden="true"></div>
+        <div class="hero__glow hero__glow--bottom" aria-hidden="true"></div>
+
+        <div class="hero__body container">
+          <!-- Texto principal -->
+          <div class="hero__text">
+            <p class="hero__greeting">👋 Hola, soy</p>
+            <h1 class="hero__name">Francisco<br />Miceli</h1>
+            <p class="hero__tagline">
+              <span id="typed-text"></span
+              ><span class="hero__cursor" aria-hidden="true">|</span>
+            </p>
+            <p class="hero__bio">
+              Estudiante apasionado por el desarrollo web. Creo experiencias
+              digitales que combinan creatividad y código limpio.
+            </p>
+            <div class="hero__buttons">
+              <a href="#projects" class="btn btn--primary">Ver proyectos</a>
+              <a href="#contact" class="btn btn--ghost">Contactarme</a>
+            </div>
+            <div class="hero__socials">
+              <a href="#" class="hero__social-link" aria-label="LinkedIn">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+                LinkedIn
+              </a>
+              <a href="https://github.com/fmicelii" class="hero__social-link" aria-label="GitHub">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                  />
+                </svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- Avatar decorativo (visible desde tablet) -->
+          <div class="hero__visual" aria-hidden="true">
+            <div class="hero__avatar-wrapper">
+              <div class="hero__avatar">
+                <span class="hero__initials">FM</span>
+              </div>
+              <div class="hero__ring hero__ring--sm"></div>
+              <div class="hero__ring hero__ring--md"></div>
+              <div class="hero__ring hero__ring--lg"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Indicador de scroll -->
+        <div class="hero__scroll" aria-hidden="true">
+          <span>Scroll</span>
+          <div class="hero__scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- ================================
+           SECCIÓN: SOBRE MÍ
+      ================================= -->
+      <section id="about" class="about section">
+        <div class="container">
+          <h2 class="section__title">
+            Sobre <span class="text-gradient">mí</span>
+          </h2>
+
+          <div class="about__grid">
+            <!-- Foto / Media -->
+            <div class="about__media reveal">
+              <div class="about__photo-frame">
+                <div class="about__photo-inner"></div>
+                <span class="about__photo-badge">🎓 Estudiante</span>
+              </div>
+            </div>
+
+            <!-- Texto -->
+            <div class="about__body reveal">
+              <p class="about__text">
+                Soy Francisco, un estudiante argentino con una gran pasión por
+                la programación y el diseño web. Me encanta convertir ideas en
+                experiencias digitales atractivas y funcionales.
+              </p>
+              <p class="about__text">
+                Actualmente estoy aprendiendo desarrollo front-end y me interesa
+                especialmente crear interfaces que sean tanto estéticas como
+                accesibles para todos los usuarios.
+              </p>
+
+              <ul class="about__stats">
+                <li class="about__stat">
+                  <span class="about__stat-icon">📍</span>
+                  <div>
+                    <span class="about__stat-label">Ubicación</span>
+                    <span class="about__stat-value">Argentina</span>
+                  </div>
+                </li>
+                <li class="about__stat">
+                  <span class="about__stat-icon">🎓</span>
+                  <div>
+                    <span class="about__stat-label">Educación</span>
+                    <span class="about__stat-value">Estudiante Secundario</span>
+                  </div>
+                </li>
+                <li class="about__stat">
+                  <span class="about__stat-icon">💡</span>
+                  <div>
+                    <span class="about__stat-label">Interés</span>
+                    <span class="about__stat-value">Desarrollo Front-End</span>
+                  </div>
+                </li>
+              </ul>
+
+              <a href="#" class="btn btn--primary">Descargar CV</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================
+           SECCIÓN: HABILIDADES
+      ================================= -->
+      <section id="skills" class="skills section">
+        <div class="container">
+          <h2 class="section__title">
+            Mis <span class="text-gradient">Habilidades</span>
+          </h2>
+          <p class="section__subtitle">
+            Tecnologías y herramientas con las que trabajo
+          </p>
+
+          <div class="skills__grid">
+            <div class="skill-card">
+              <div class="skill-card__header">
+                <span class="skill-card__emoji" aria-hidden="true">🌐</span>
+                <h3 class="skill-card__name">HTML5</h3>
+                <span class="skill-card__pct">85%</span>
+              </div>
+              <div class="skill-card__track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="HTML5: 85%">
+                <div class="skill-card__bar" style="--target: 85%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-card__header">
+                <span class="skill-card__emoji" aria-hidden="true">🎨</span>
+                <h3 class="skill-card__name">CSS3</h3>
+                <span class="skill-card__pct">80%</span>
+              </div>
+              <div class="skill-card__track" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="CSS3: 80%">
+                <div class="skill-card__bar" style="--target: 80%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-card__header">
+                <span class="skill-card__emoji" aria-hidden="true">⚡</span>
+                <h3 class="skill-card__name">JavaScript</h3>
+                <span class="skill-card__pct">65%</span>
+              </div>
+              <div class="skill-card__track" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript: 65%">
+                <div class="skill-card__bar" style="--target: 65%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-card__header">
+                <span class="skill-card__emoji" aria-hidden="true">🔧</span>
+                <h3 class="skill-card__name">Git</h3>
+                <span class="skill-card__pct">60%</span>
+              </div>
+              <div class="skill-card__track" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Git: 60%">
+                <div class="skill-card__bar" style="--target: 60%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-card__header">
+                <span class="skill-card__emoji" aria-hidden="true">📱</span>
+                <h3 class="skill-card__name">Responsive</h3>
+                <span class="skill-card__pct">75%</span>
+              </div>
+              <div class="skill-card__track" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Responsive Design: 75%">
+                <div class="skill-card__bar" style="--target: 75%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-card__header">
+                <span class="skill-card__emoji" aria-hidden="true">✨</span>
+                <h3 class="skill-card__name">UI Design</h3>
+                <span class="skill-card__pct">70%</span>
+              </div>
+              <div class="skill-card__track" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="UI Design: 70%">
+                <div class="skill-card__bar" style="--target: 70%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================
+           SECCIÓN: PROYECTOS
+      ================================= -->
+      <section id="projects" class="projects section">
+        <div class="container">
+          <h2 class="section__title">
+            Mis <span class="text-gradient">Proyectos</span>
+          </h2>
+          <p class="section__subtitle">Algunos trabajos que he realizado</p>
+
+          <div class="projects__grid">
+            <article class="project-card reveal">
+              <div class="project-card__thumb project-card__thumb--1">
+                <div class="project-card__overlay">
+                  <a href="#" class="project-card__cta">Ver proyecto →</a>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__tag">HTML · CSS</span>
+                <h3 class="project-card__title">Sitio Web Estático</h3>
+                <p class="project-card__desc">
+                  Página web con diseño responsive, buenas prácticas semánticas
+                  y animaciones CSS puras.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-card__thumb project-card__thumb--2">
+                <div class="project-card__overlay">
+                  <a href="#" class="project-card__cta">Ver proyecto →</a>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__tag">JavaScript</span>
+                <h3 class="project-card__title">App Interactiva</h3>
+                <p class="project-card__desc">
+                  Aplicación con manipulación del DOM, eventos y lógica
+                  JavaScript para una experiencia dinámica.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-card__thumb project-card__thumb--3">
+                <div class="project-card__overlay">
+                  <a href="#" class="project-card__cta">Ver proyecto →</a>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__tag">HTML · CSS · JS</span>
+                <h3 class="project-card__title">Proyecto Full Front</h3>
+                <p class="project-card__desc">
+                  Proyecto completo con múltiples secciones, efectos visuales y
+                  diseño mobile-first.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================
+           SECCIÓN: CONTACTO
+      ================================= -->
+      <section id="contact" class="contact section">
+        <div class="container">
+          <h2 class="section__title">
+            Ponete en <span class="text-gradient">contacto</span>
+          </h2>
+          <p class="section__subtitle">
+            ¿Tenés alguna propuesta o idea? ¡Hablemos!
+          </p>
+
+          <div class="contact__layout">
+            <!-- Canales de contacto -->
+            <div class="contact__channels reveal">
+              <a href="mailto:francisco@email.com" class="contact__card">
+                <span class="contact__card-icon" aria-hidden="true">📧</span>
+                <div>
+                  <span class="contact__card-label">Email</span>
+                  <span class="contact__card-value">francisco@email.com</span>
+                </div>
+              </a>
+
+              <a href="#" class="contact__card">
+                <span class="contact__card-icon" aria-hidden="true">💼</span>
+                <div>
+                  <span class="contact__card-label">LinkedIn</span>
+                  <span class="contact__card-value">linkedin.com/in/fmiceli</span>
+                </div>
+              </a>
+
+              <a href="https://github.com/fmicelii" class="contact__card">
+                <span class="contact__card-icon" aria-hidden="true">🖥️</span>
+                <div>
+                  <span class="contact__card-label">GitHub</span>
+                  <span class="contact__card-value">github.com/fmicelii</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Formulario -->
+            <form
+              class="contact__form reveal"
+              id="contact-form"
+              novalidate
+            >
+              <div class="form__field">
+                <label class="form__label" for="contact-name">Nombre</label>
+                <input
+                  class="form__input"
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  placeholder="Tu nombre completo"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+
+              <div class="form__field">
+                <label class="form__label" for="contact-email">Email</label>
+                <input
+                  class="form__input"
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  placeholder="tu@email.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+
+              <div class="form__field">
+                <label class="form__label" for="contact-message">Mensaje</label>
+                <textarea
+                  class="form__textarea"
+                  id="contact-message"
+                  name="message"
+                  placeholder="¿En qué puedo ayudarte?"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--wide" id="submit-btn">
+                Enviar mensaje →
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+    <footer id="footer">
+      <div class="footer__inner container">
+        <p class="footer__logo">FM<span class="text-gradient">.</span></p>
+        <p class="footer__copy">
+          © 2026 Francisco Miceli · Hecho con ❤️ y mucho CSS
+        </p>
+        <nav class="footer__nav" aria-label="Navegación del footer">
+          <a href="#" class="footer__link">LinkedIn</a>
+          <a href="https://github.com/fmicelii" class="footer__link">GitHub</a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Botón scroll top -->
+    <button
+      class="scroll-top"
+      id="scroll-top"
+      aria-label="Volver al inicio"
+      title="Volver al inicio"
+    >
+      ↑
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
