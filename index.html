@@ -7,7 +7,7 @@
       name="description"
       content="Portafolio personal de Francisco Miceli — Desarrollador Web Front-End"
     />
-    <!-- Open Graph para LinkedIn -->
+    <!-- open graph -->
     <meta property="og:title" content="Francisco Miceli | Portafolio" />
     <meta
       property="og:description"
@@ -29,9 +29,7 @@
   </head>
 
   <body>
-    <!-- ================================
-         HEADER / NAVEGACIÓN
-    ================================= -->
+    <!-- nav -->
     <header id="header">
       <nav class="nav container">
         <a href="#hero" class="nav__logo"
@@ -60,15 +58,12 @@
     </header>
 
     <main>
-      <!-- ================================
-           SECCIÓN: HERO
-      ================================= -->
+      <!-- hero -->
       <section id="hero" class="hero">
         <div class="hero__glow hero__glow--top" aria-hidden="true"></div>
         <div class="hero__glow hero__glow--bottom" aria-hidden="true"></div>
 
         <div class="hero__body container">
-          <!-- Texto principal -->
           <div class="hero__text">
             <p class="hero__greeting">👋 Hola, soy</p>
             <h1 class="hero__name">Francisco<br />Miceli</h1>
@@ -117,29 +112,18 @@
             </div>
           </div>
 
-          <!-- Avatar decorativo (visible desde tablet) -->
           <div class="hero__visual" aria-hidden="true">
-            <div class="hero__avatar-wrapper">
-              <div class="hero__avatar">
-                <span class="hero__initials">FM</span>
-              </div>
-              <div class="hero__ring hero__ring--sm"></div>
-              <div class="hero__ring hero__ring--md"></div>
-              <div class="hero__ring hero__ring--lg"></div>
-            </div>
+            <div class="hero__photo"></div>
           </div>
         </div>
 
-        <!-- Indicador de scroll -->
         <div class="hero__scroll" aria-hidden="true">
           <span>Scroll</span>
           <div class="hero__scroll-line"></div>
         </div>
       </section>
 
-      <!-- ================================
-           SECCIÓN: SOBRE MÍ
-      ================================= -->
+      <!-- sobre mí -->
       <section id="about" class="about section">
         <div class="container">
           <h2 class="section__title">
@@ -147,7 +131,6 @@
           </h2>
 
           <div class="about__grid">
-            <!-- Foto / Media -->
             <div class="about__media reveal">
               <div class="about__photo-frame">
                 <div class="about__photo-inner"></div>
@@ -155,7 +138,6 @@
               </div>
             </div>
 
-            <!-- Texto -->
             <div class="about__body reveal">
               <p class="about__text">
                 Soy una persona que siempre busca estar en movimiento. Uso mi tiempo haciendo lo que me gusta y aprendiendo cosas nuevas.
@@ -185,98 +167,65 @@
                 </li>
               </ul>
 
-              <a href="#" class="btn btn--primary">Descargar CV</a>
+              <a href="https://www.ipm.edu.ar/" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Ver institución →</a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ================================
-           SECCIÓN: HABILIDADES
-      ================================= -->
+      <!-- habilidades -->
       <section id="skills" class="skills section">
         <div class="container">
           <h2 class="section__title">
             Mis <span class="text-gradient">Habilidades</span>
           </h2>
           <p class="section__subtitle">
-            Tecnologías y herramientas con las que trabajo
+            Tecnologías y herramientas con las que me manejo.
           </p>
 
           <div class="skills__grid">
+
             <div class="skill-card">
-              <div class="skill-card__header">
-                <span class="skill-card__emoji" aria-hidden="true">🌐</span>
-                <h3 class="skill-card__name">HTML5</h3>
-                <span class="skill-card__pct">85%</span>
+              <div class="skill-card__icon" aria-hidden="true">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+                </svg>
               </div>
-              <div class="skill-card__track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="HTML5: 85%">
-                <div class="skill-card__bar" style="--target: 85%;"></div>
-              </div>
+              <h3 class="skill-card__name">Desarrollo Web</h3>
+              <p class="skill-card__desc">Desde la lógica del backend y el <strong>manejo de bases de datos</strong> hasta el diseño visual del frontend. Sé cómo construir, estilizar y hostear una página web de principio a fin.</p>
+              <span class="skill-card__tag">Full Stack</span>
             </div>
 
             <div class="skill-card">
-              <div class="skill-card__header">
-                <span class="skill-card__emoji" aria-hidden="true">🎨</span>
-                <h3 class="skill-card__name">CSS3</h3>
-                <span class="skill-card__pct">80%</span>
+              <div class="skill-card__icon" aria-hidden="true">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+                  <path d="M7 8h2m4 0h2M12 7v4"/>
+                </svg>
               </div>
-              <div class="skill-card__track" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="CSS3: 80%">
-                <div class="skill-card__bar" style="--target: 80%;"></div>
-              </div>
+              <h3 class="skill-card__name">Desarrollo de Videojuegos</h3>
+              <p class="skill-card__desc">Proyectos propios desarrollados en Godot Engine. Experiencia en mecánicas 2D y diseño de niveles de puzzles desde cero.</p>
+              <span class="skill-card__tag">Godot · 2D</span>
             </div>
 
             <div class="skill-card">
-              <div class="skill-card__header">
-                <span class="skill-card__emoji" aria-hidden="true">⚡</span>
-                <h3 class="skill-card__name">JavaScript</h3>
-                <span class="skill-card__pct">65%</span>
+              <div class="skill-card__icon" aria-hidden="true">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.5V11h-4V9.5A4 4 0 0 1 8 6a4 4 0 0 1 4-4z"/>
+                  <path d="M9 11v2a3 3 0 0 0 6 0v-2"/><line x1="12" y1="16" x2="12" y2="21"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                </svg>
               </div>
-              <div class="skill-card__track" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript: 65%">
-                <div class="skill-card__bar" style="--target: 65%;"></div>
-              </div>
+              <h3 class="skill-card__name">Manejo de IA</h3>
+              <p class="skill-card__desc">Uso estratégico de herramientas de inteligencia artificial para potenciar proyectos, optimizar tareas y resolver problemas de manera eficiente.</p>
+              <span class="skill-card__tag">AI Tools</span>
             </div>
 
-            <div class="skill-card">
-              <div class="skill-card__header">
-                <span class="skill-card__emoji" aria-hidden="true">🔧</span>
-                <h3 class="skill-card__name">Git</h3>
-                <span class="skill-card__pct">60%</span>
-              </div>
-              <div class="skill-card__track" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Git: 60%">
-                <div class="skill-card__bar" style="--target: 60%;"></div>
-              </div>
-            </div>
-
-            <div class="skill-card">
-              <div class="skill-card__header">
-                <span class="skill-card__emoji" aria-hidden="true">📱</span>
-                <h3 class="skill-card__name">Responsive</h3>
-                <span class="skill-card__pct">75%</span>
-              </div>
-              <div class="skill-card__track" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Responsive Design: 75%">
-                <div class="skill-card__bar" style="--target: 75%;"></div>
-              </div>
-            </div>
-
-            <div class="skill-card">
-              <div class="skill-card__header">
-                <span class="skill-card__emoji" aria-hidden="true">✨</span>
-                <h3 class="skill-card__name">UI Design</h3>
-                <span class="skill-card__pct">70%</span>
-              </div>
-              <div class="skill-card__track" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="UI Design: 70%">
-                <div class="skill-card__bar" style="--target: 70%;"></div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      <!-- ================================
-           SECCIÓN: PROYECTOS (comentada — sin proyectos aún)
-      ================================= -->
-      <!--
+      <!-- proyectos — descomentar cuando los tenga
       <section id="projects" class="projects section">
         <div class="container">
           <h2 class="section__title">
@@ -334,9 +283,7 @@
       </section>
       -->
 
-      <!-- ================================
-           SECCIÓN: CONTACTO
-      ================================= -->
+      <!-- contacto -->
       <section id="contact" class="contact section">
         <div class="container">
           <h2 class="section__title">
@@ -346,7 +293,6 @@
             ¿Tenés alguna propuesta o idea? ¡Hablemos!
           </p>
 
-          <!-- Botón primario WhatsApp -->
           <div class="contact__cta reveal">
             <a
               href="https://wa.me/5491162351561"
@@ -363,7 +309,6 @@
             </a>
           </div>
 
-          <!-- Tarjetas de contacto -->
           <div class="contact__grid reveal">
             <a href="mailto:franmiceli08@gmail.com" class="contact__card">
               <span class="contact__card-icon" aria-hidden="true">📧</span>
@@ -416,9 +361,7 @@
       </section>
     </main>
 
-    <!-- ================================
-         FOOTER
-    ================================= -->
+    <!-- footer -->
     <footer id="footer">
       <div class="footer__inner container">
         <p class="footer__logo">FM<span class="text-gradient">.</span></p>
@@ -426,13 +369,12 @@
           © 2026 Francisco Miceli · Hecho con ❤️ y mucho CSS
         </p>
         <nav class="footer__nav" aria-label="Navegación del footer">
-          <a href="#" class="footer__link">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/francisco-miceli-439b13329/" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://github.com/fmicelii" class="footer__link">GitHub</a>
         </nav>
       </div>
     </footer>
 
-    <!-- Botón scroll top -->
     <button
       class="scroll-top"
       id="scroll-top"

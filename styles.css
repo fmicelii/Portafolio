@@ -1,9 +1,6 @@
-/* ==============================================
-   PORTAFOLIO — Francisco Miceli
-   styles.css | Mobile First Design
-   ============================================== */
+/* portafolio — francisco miceli | mobile first */
 
-/* --- Variables globales --- */
+/* variables */
 :root {
   /* Colores principales — paleta amanecer con nubes azuladas */
   --color-bg: #0f0a06;
@@ -61,23 +58,13 @@
   /* Sombras */
   --shadow-card: 0 4px 32px rgba(0, 0, 0, 0.45);
   --shadow-accent: 0 0 40px var(--color-accent-glow);
-  --shadow-glow-lg: 0 0 100px rgba(99, 102, 241, 0.12);
 
-  /* URLs de imágenes (projects) */
-  --img-project-1: url("https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=700&q=80");
-  --img-project-2: url("https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=700&q=80");
-  --img-project-3: url("https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=700&q=80");
-
-  /* URL imagen about (reemplazá con tu foto) */
+  /* imágenes */
   --img-about: url("fotoPro.jpeg");
-
-  /* URL foto portada (hero avatar) */
   --img-portada: url("fotoPortada.jpeg");
 }
 
-/* ==============================================
-   RESET & BASE
-   ============================================== */
+/* reset */
 *,
 *::before,
 *::after {
@@ -114,11 +101,7 @@ ul {
   list-style: none;
 }
 
-/* ==============================================
-   UTILIDADES
-   ============================================== */
-
-/* Contenedor centrado */
+/* utilidades */
 .container {
   width: 100%;
   max-width: 1160px;
@@ -126,12 +109,10 @@ ul {
   padding-inline: var(--sp-lg);
 }
 
-/* Sección con padding vertical */
 .section {
   padding-block: var(--sp-3xl);
 }
 
-/* Título de sección */
 .section__title {
   font-family: var(--font-heading);
   font-size: var(--fs-2xl);
@@ -148,7 +129,6 @@ ul {
   margin-bottom: var(--sp-2xl);
 }
 
-/* Texto con degradado */
 .text-gradient {
   background: linear-gradient(
     135deg,
@@ -160,7 +140,6 @@ ul {
   background-clip: text;
 }
 
-/* Animación de entrada por scroll */
 .reveal {
   opacity: 0;
   transform: translateY(36px);
@@ -172,9 +151,7 @@ ul {
   transform: translateY(0);
 }
 
-/* ==============================================
-   BOTONES
-   ============================================== */
+/* botones */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -192,7 +169,6 @@ ul {
   white-space: nowrap;
 }
 
-/* Primario: degradado */
 .btn--primary {
   background: linear-gradient(
     135deg,
@@ -209,7 +185,6 @@ ul {
     0 4px 16px var(--color-pink-glow);
 }
 
-/* Ghost: borde */
 .btn--ghost {
   background: transparent;
   color: var(--color-text);
@@ -222,14 +197,11 @@ ul {
   background: rgba(129, 140, 248, 0.07);
 }
 
-/* Ancho completo */
 .btn--wide {
   width: 100%;
 }
 
-/* ==============================================
-   HEADER / NAVEGACIÓN
-   ============================================== */
+/* nav */
 #header {
   position: fixed;
   inset-block-start: 0;
@@ -249,7 +221,6 @@ ul {
   padding-block: var(--sp-md);
 }
 
-/* Logo */
 .nav__logo {
   font-family: var(--font-heading);
   font-size: var(--fs-xl);
@@ -262,7 +233,6 @@ ul {
   color: var(--color-accent);
 }
 
-/* Botón hamburguesa (mobile) */
 .nav__toggle {
   display: flex;
   flex-direction: column;
@@ -283,7 +253,6 @@ ul {
   transition: transform var(--transition-base), opacity var(--transition-base);
 }
 
-/* Estado abierto del toggle */
 .nav__toggle.active .nav__toggle-bar:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -297,7 +266,6 @@ ul {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Menú móvil (off-canvas) */
 .nav__menu {
   position: fixed;
   inset-block: 0;
@@ -318,7 +286,6 @@ ul {
   inset-inline-end: 0;
 }
 
-/* Links del nav */
 .nav__link {
   font-family: var(--font-heading);
   font-size: var(--fs-lg);
@@ -354,9 +321,7 @@ ul {
   width: 100%;
 }
 
-/* ==============================================
-   HERO
-   ============================================== */
+/* hero */
 .hero {
   min-height: 100svh;
   display: flex;
@@ -370,7 +335,6 @@ ul {
   overflow: hidden;
 }
 
-/* Brillos de fondo */
 .hero__glow {
   position: absolute;
   border-radius: var(--radius-full);
@@ -403,7 +367,6 @@ ul {
   left: -10%;
 }
 
-/* Contenido del hero */
 .hero__body {
   display: flex;
   flex-direction: column;
@@ -474,7 +437,6 @@ ul {
   margin-bottom: var(--sp-lg);
 }
 
-/* Botones de redes sociales */
 .hero__socials {
   display: flex;
   gap: var(--sp-md);
@@ -502,76 +464,18 @@ ul {
   transform: translateY(-1px);
 }
 
-/* Avatar / visual (desktop) */
+/* Foto lateral hero */
 .hero__visual {
   display: none;
 }
 
-.hero__avatar-wrapper {
-  position: relative;
-  width: 280px;
-  height: 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero__avatar {
-  width: 180px;
-  height: 180px;
-  border-radius: var(--radius-full);
+.hero__photo {
+  width: 100%;
+  height: 100%;
   background-image: var(--img-portada);
   background-size: cover;
-  background-position: center top;
-  box-shadow: var(--shadow-accent), 0 0 60px var(--color-pink-glow);
-  position: relative;
-  z-index: 2;
-  border: 3px solid rgba(129, 140, 248, 0.4);
-}
-
-.hero__initials {
-  display: none;
-}
-
-/* Anillos pulsantes */
-.hero__ring {
-  position: absolute;
-  border-radius: var(--radius-full);
-  border: 1.5px solid var(--color-accent);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.hero__ring--sm {
-  width: 220px;
-  height: 220px;
-  opacity: 0.35;
-  animation: pulse-ring 2.2s ease-in-out infinite;
-}
-
-.hero__ring--md {
-  width: 260px;
-  height: 260px;
-  opacity: 0.2;
-  animation: pulse-ring 2.2s ease-in-out infinite 0.4s;
-}
-
-.hero__ring--lg {
-  width: 310px;
-  height: 310px;
-  opacity: 0.1;
-  animation: pulse-ring 2.2s ease-in-out infinite 0.8s;
-}
-
-@keyframes pulse-ring {
-  0%,
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.06);
-  }
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 100%);
 }
 
 /* Indicador de scroll */
@@ -607,9 +511,7 @@ ul {
   }
 }
 
-/* ==============================================
-   SOBRE MÍ
-   ============================================== */
+/* sobre mí */
 .about {
   background: var(--color-surface);
 }
@@ -621,7 +523,6 @@ ul {
   gap: var(--sp-2xl);
 }
 
-/* Foto */
 .about__media {
   position: relative;
   flex-shrink: 0;
@@ -665,7 +566,6 @@ ul {
   white-space: nowrap;
 }
 
-/* Texto */
 .about__body {
   max-width: 580px;
 }
@@ -713,22 +613,22 @@ ul {
   font-size: var(--fs-base);
 }
 
-/* ==============================================
-   HABILIDADES
-   ============================================== */
+/* habilidades */
 .skills__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--sp-md);
+  gap: var(--sp-lg);
 }
 
 .skill-card {
   background: var(--color-card);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--sp-lg);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
   transition: all var(--transition-base);
-  /* Animación de entrada */
   opacity: 0;
   transform: translateY(28px);
 }
@@ -741,62 +641,59 @@ ul {
 .skill-card:hover {
   background: var(--color-card-hover);
   border-color: var(--color-accent);
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-accent);
 }
 
-.skill-card__header {
+.skill-card__icon {
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
-  gap: var(--sp-sm);
-  margin-bottom: var(--sp-md);
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: rgba(232, 162, 90, 0.1);
+  border: 1px solid rgba(232, 162, 90, 0.2);
+  color: var(--color-accent);
+  margin-bottom: var(--sp-sm);
+  transition: background var(--transition-base), border-color var(--transition-base);
 }
 
-.skill-card__emoji {
-  font-size: 1.4rem;
+.skill-card:hover .skill-card__icon {
+  background: rgba(232, 162, 90, 0.18);
+  border-color: var(--color-accent);
 }
 
 .skill-card__name {
   font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+
+.skill-card__desc {
+  color: var(--color-text-muted);
   font-size: var(--fs-sm);
-  font-weight: 600;
+  line-height: 1.7;
   flex: 1;
 }
 
-.skill-card__pct {
+.skill-card__tag {
+  display: inline-block;
+  margin-top: var(--sp-sm);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: rgba(232, 162, 90, 0.12);
+  border: 1px solid rgba(232, 162, 90, 0.25);
+  color: var(--color-accent);
   font-size: var(--fs-xs);
-  color: var(--color-text-muted);
   font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  align-self: flex-start;
 }
 
-/* Barra de progreso */
-.skill-card__track {
-  height: 5px;
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: var(--radius-full);
-  overflow: hidden;
-}
-
-.skill-card__bar {
-  height: 100%;
-  width: 0;
-  background: linear-gradient(
-    to right,
-    var(--color-accent-dark),
-    var(--color-pink)
-  );
-  border-radius: var(--radius-full);
-  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-/* Animar barra cuando la tarjeta es visible */
-.skill-card.visible .skill-card__bar {
-  width: var(--target);
-}
-
-/* ==============================================
-   PROYECTOS
-   ============================================== */
+/* proyectos */
 .projects {
   background: var(--color-surface);
 }
@@ -821,7 +718,6 @@ ul {
   box-shadow: var(--shadow-accent);
 }
 
-/* Thumbnail con imagen de :root */
 .project-card__thumb {
   height: 200px;
   background-size: cover;
@@ -842,7 +738,6 @@ ul {
   background-image: var(--img-project-3);
 }
 
-/* Overlay con CTA */
 .project-card__overlay {
   position: absolute;
   inset: 0;
@@ -878,7 +773,6 @@ ul {
   transform: scale(1.04);
 }
 
-/* Info del proyecto */
 .project-card__body {
   padding: var(--sp-lg);
 }
@@ -905,16 +799,13 @@ ul {
   line-height: 1.75;
 }
 
-/* ==============================================
-   CONTACTO
-   ============================================== */
+/* contacto */
 .contact__layout {
   display: flex;
   flex-direction: column;
   gap: var(--sp-2xl);
 }
 
-/* Tarjetas de canal */
 .contact__channels {
   display: flex;
   flex-direction: column;
@@ -964,7 +855,6 @@ ul {
   color: var(--color-accent);
 }
 
-/* Botón WhatsApp primario */
 .btn--whatsapp {
   background: linear-gradient(135deg, #25d366, #128c7e);
   color: #fff;
@@ -978,23 +868,19 @@ ul {
   box-shadow: 0 8px 32px rgba(37, 211, 102, 0.45);
 }
 
-/* CTA centrado */
 .contact__cta {
   display: flex;
   justify-content: center;
   margin-bottom: var(--sp-2xl);
 }
 
-/* Grid de tarjetas */
 .contact__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--sp-md);
 }
 
-/* ==============================================
-   FOOTER
-   ============================================== */
+/* footer */
 #footer {
   background: var(--color-surface);
   border-top: 1px solid var(--color-border);
@@ -1038,9 +924,7 @@ ul {
   color: var(--color-accent);
 }
 
-/* ==============================================
-   BOTÓN SCROLL TOP
-   ============================================== */
+/* scroll top */
 .scroll-top {
   position: fixed;
   bottom: var(--sp-xl);
@@ -1077,16 +961,12 @@ ul {
   transform: translateY(-3px);
 }
 
-/* ==============================================
-   MEDIA QUERY — Tablet (768px+)
-   ============================================== */
+/* tablet */
 @media (min-width: 768px) {
-  /* Tamaños de fuente de sección */
   .section__title {
     font-size: var(--fs-3xl);
   }
 
-  /* Ocultar toggle, mostrar nav horizontal */
   .nav__toggle {
     display: none;
   }
@@ -1105,7 +985,7 @@ ul {
     font-size: var(--fs-sm);
   }
 
-  /* Layout del hero: horizontal */
+  /* layout del hero en tablet */
   .hero__body {
     flex-direction: row;
     text-align: left;
@@ -1125,13 +1005,14 @@ ul {
     justify-content: flex-start;
   }
 
-  /* Mostrar avatar en hero */
+  /* foto lateral visible */
   .hero__visual {
-    display: flex;
+    display: block;
     flex-shrink: 0;
+    width: 300px;
+    height: 460px;
   }
 
-  /* About: fila */
   .about__grid {
     flex-direction: row;
     align-items: flex-start;
@@ -1148,67 +1029,34 @@ ul {
     gap: var(--sp-xs);
   }
 
-  /* Skills: 3 columnas */
   .skills__grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Proyectos: 2 columnas */
   .projects__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Contacto: 2 columnas en grid */
   .contact__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* ==============================================
-   MEDIA QUERY — Desktop (1024px+)
-   ============================================== */
+/* desktop */
 @media (min-width: 1024px) {
-  /* Proyectos: 3 columnas */
   .projects__grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Avatar más grande */
-  .hero__avatar-wrapper {
-    width: 360px;
-    height: 360px;
+  .hero__visual {
+    width: 400px;
+    height: 560px;
   }
 
-  .hero__avatar {
-    width: 230px;
-    height: 230px;
-  }
-
-  .hero__initials {
-    font-size: 4rem;
-  }
-
-  .hero__ring--sm {
-    width: 280px;
-    height: 280px;
-  }
-
-  .hero__ring--md {
-    width: 325px;
-    height: 325px;
-  }
-
-  .hero__ring--lg {
-    width: 370px;
-    height: 370px;
-  }
-
-  /* Thumbnail de proyectos más alto en desktop */
   .project-card__thumb {
     height: 230px;
   }
 
-  /* About: más margen */
   .about__photo-frame {
     width: 280px;
     height: 330px;

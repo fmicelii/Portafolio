@@ -1,11 +1,6 @@
-// ==============================================
-// PORTAFOLIO — Francisco Miceli
-// script.js — Animaciones e interactividad
-// ==============================================
+// portafolio — francisco miceli
 
-/* -----------------------------------------------
-   1. EFECTO DE TIPEO (Hero tagline)
------------------------------------------------ */
+// efecto de tipeo
 const typedTextEl = document.getElementById("typed-text");
 
 const phrases = [
@@ -33,7 +28,6 @@ function typeEffect() {
   }
 
   if (!isDeleting && charIndex === current.length) {
-    // Pausa antes de borrar
     isDeleting = true;
     typingDelay = 1800;
   } else if (isDeleting && charIndex === 0) {
@@ -45,9 +39,7 @@ function typeEffect() {
   setTimeout(typeEffect, typingDelay);
 }
 
-/* -----------------------------------------------
-   2. MENÚ MÓVIL
------------------------------------------------ */
+// menú móvil
 const navToggle = document.getElementById("nav-toggle");
 const navMenu = document.getElementById("nav-menu");
 
@@ -57,7 +49,7 @@ navToggle.addEventListener("click", () => {
   navToggle.setAttribute("aria-expanded", isOpen.toString());
 });
 
-// Cerrar el menú al hacer click en cualquier link
+// cerrar al hacer click en un link
 document.querySelectorAll(".nav__link").forEach((link) => {
   link.addEventListener("click", () => {
     navMenu.classList.remove("open");
@@ -66,7 +58,7 @@ document.querySelectorAll(".nav__link").forEach((link) => {
   });
 });
 
-// Cerrar el menú al hacer click fuera
+// cerrar al hacer click fuera
 document.addEventListener("click", (e) => {
   if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
     navMenu.classList.remove("open");
@@ -90,9 +82,7 @@ function handleHeaderScroll() {
 
 window.addEventListener("scroll", handleHeaderScroll, { passive: true });
 
-/* -----------------------------------------------
-   4. NAV LINK ACTIVO según sección visible
------------------------------------------------ */
+// nav link activo según sección visible
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".nav__link");
 
@@ -116,9 +106,7 @@ function updateActiveNavLink() {
 
 window.addEventListener("scroll", updateActiveNavLink, { passive: true });
 
-/* -----------------------------------------------
-   5. SCROLL REVEAL — IntersectionObserver
------------------------------------------------ */
+// scroll reveal
 const revealItems = document.querySelectorAll(".reveal");
 
 const revealObserver = new IntersectionObserver(
@@ -138,19 +126,14 @@ const revealObserver = new IntersectionObserver(
 
 revealItems.forEach((el) => revealObserver.observe(el));
 
-/* -----------------------------------------------
-   6. SKILL CARDS — Animación escalonada al entrar
------------------------------------------------ */
+// skill cards — animación escalonada
 const skillCards = document.querySelectorAll(".skill-card");
 
 const skillObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Calcular índice para delay escalonado
-        const siblings = Array.from(
-          entry.target.parentElement.children
-        );
+        const siblings = Array.from(entry.target.parentElement.children);
         const idx = siblings.indexOf(entry.target);
 
         setTimeout(() => {
@@ -169,38 +152,7 @@ const skillObserver = new IntersectionObserver(
 
 skillCards.forEach((card) => skillObserver.observe(card));
 
-/* -----------------------------------------------
-   7. PROJECT CARDS — Animación escalonada al entrar
------------------------------------------------ */
-const projectCards = document.querySelectorAll(".project-card");
-
-const projectObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const siblings = Array.from(
-          entry.target.parentElement.children
-        );
-        const idx = siblings.indexOf(entry.target);
-
-        setTimeout(() => {
-          entry.target.classList.add("visible");
-        }, idx * 110);
-
-        projectObserver.unobserve(entry.target);
-      }
-    });
-  },
-  {
-    threshold: 0.1,
-  }
-);
-
-projectCards.forEach((card) => projectObserver.observe(card));
-
-/* -----------------------------------------------
-   8. BOTÓN SCROLL TOP
------------------------------------------------ */
+// scroll top
 const scrollTopBtn = document.getElementById("scroll-top");
 
 function handleScrollTopVisibility() {
@@ -217,9 +169,7 @@ scrollTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-/* -----------------------------------------------
-   10. PARALLAX SUTIL en el fondo del Hero
------------------------------------------------ */
+// parallax sutil en el hero
 const heroGlows = document.querySelectorAll(".hero__glow");
 
 function handleHeroParallax() {
@@ -234,13 +184,8 @@ function handleHeroParallax() {
 
 window.addEventListener("scroll", handleHeroParallax, { passive: true });
 
-/* -----------------------------------------------
-   INICIO
------------------------------------------------ */
-// Arrancar el efecto de tipeo con un pequeño delay inicial
+// inicio
 setTimeout(typeEffect, 600);
-
-// Verificar scroll inicial por si la página carga con scroll
 handleHeaderScroll();
 handleScrollTopVisibility();
 updateActiveNavLink();
