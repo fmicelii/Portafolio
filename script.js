@@ -9,10 +9,9 @@
 const typedTextEl = document.getElementById("typed-text");
 
 const phrases = [
-  "Desarrollador Web",
-  "Creador de Interfaces",
-  "Apasionado por el Diseño",
-  "Estudiante de Programación ✨",
+  "Técnico en Computación",
+  "Full Stack Junior",
+  "Aprendizaje Constante 🚀",
 ];
 
 let phraseIndex = 0;
@@ -83,9 +82,9 @@ const header = document.getElementById("header");
 
 function handleHeaderScroll() {
   if (window.scrollY > 60) {
-    header.style.background = "rgba(7, 7, 26, 0.97)";
+    header.style.background = "rgba(15, 10, 6, 0.99)";
   } else {
-    header.style.background = "rgba(7, 7, 26, 0.85)";
+    header.style.background = "rgba(15, 10, 6, 0.92)";
   }
 }
 
@@ -200,45 +199,7 @@ const projectObserver = new IntersectionObserver(
 projectCards.forEach((card) => projectObserver.observe(card));
 
 /* -----------------------------------------------
-   8. FORMULARIO — Feedback visual al enviar
------------------------------------------------ */
-const contactForm = document.getElementById("contact-form");
-const submitBtn = document.getElementById("submit-btn");
-
-contactForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  // Evitar doble envío
-  if (submitBtn.disabled) return;
-
-  // Estado de carga
-  const originalText = submitBtn.textContent;
-  submitBtn.textContent = "Enviando…";
-  submitBtn.disabled = true;
-  submitBtn.style.opacity = "0.75";
-
-  // Simular envío con delay
-  setTimeout(() => {
-    submitBtn.textContent = "¡Mensaje enviado! ✓";
-    submitBtn.style.opacity = "1";
-    submitBtn.style.background =
-      "linear-gradient(135deg, #22c55e, #16a34a)";
-    submitBtn.style.boxShadow = "0 4px 20px rgba(34, 197, 94, 0.3)";
-
-    contactForm.reset();
-
-    // Restaurar después de 3 segundos
-    setTimeout(() => {
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-      submitBtn.style.background = "";
-      submitBtn.style.boxShadow = "";
-    }, 3000);
-  }, 1000);
-});
-
-/* -----------------------------------------------
-   9. BOTÓN SCROLL TOP
+   8. BOTÓN SCROLL TOP
 ----------------------------------------------- */
 const scrollTopBtn = document.getElementById("scroll-top");
 

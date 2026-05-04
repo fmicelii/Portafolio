@@ -5,20 +5,20 @@
 
 /* --- Variables globales --- */
 :root {
-  /* Colores principales */
-  --color-bg: #07071a;
-  --color-surface: #0d0d26;
-  --color-card: #13133a;
-  --color-card-hover: #1a1a48;
-  --color-border: rgba(129, 140, 248, 0.18);
-  --color-nav-bg: rgba(7, 7, 26, 0.85);
+  /* Colores principales — paleta amanecer con nubes azuladas */
+  --color-bg: #0f0a06;
+  --color-surface: #160e07;
+  --color-card: #1e1208;
+  --color-card-hover: #28180a;
+  --color-border: rgba(147, 197, 253, 0.15);
+  --color-nav-bg: rgba(15, 10, 6, 0.92);
 
-  /* Accentos */
-  --color-accent: #818cf8;
-  --color-accent-dark: #6366f1;
-  --color-accent-glow: rgba(99, 102, 241, 0.25);
-  --color-pink: #f472b6;
-  --color-pink-glow: rgba(244, 114, 182, 0.2);
+  /* Accentos — naranja amanecer + aqua cielo */
+  --color-accent: #e8a25a;
+  --color-accent-dark: #c97832;
+  --color-accent-glow: rgba(201, 120, 50, 0.28);
+  --color-pink: #7ec8c0;
+  --color-pink-glow: rgba(126, 200, 192, 0.22);
 
   /* Texto */
   --color-text: #f1f5f9;
@@ -69,7 +69,10 @@
   --img-project-3: url("https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=700&q=80");
 
   /* URL imagen about (reemplazá con tu foto) */
-  --img-about: url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80");
+  --img-about: url("fotoPro.jpeg");
+
+  /* URL foto portada (hero avatar) */
+  --img-portada: url("fotoPortada.jpeg");
 }
 
 /* ==============================================
@@ -381,7 +384,7 @@ ul {
   height: 500px;
   background: radial-gradient(
     circle,
-    rgba(99, 102, 241, 0.18) 0%,
+    rgba(192, 122, 58, 0.22) 0%,
     transparent 70%
   );
   top: -15%;
@@ -393,7 +396,7 @@ ul {
   height: 360px;
   background: radial-gradient(
     circle,
-    rgba(244, 114, 182, 0.14) 0%,
+    rgba(160, 90, 20, 0.18) 0%,
     transparent 70%
   );
   bottom: 5%;
@@ -517,25 +520,17 @@ ul {
   width: 180px;
   height: 180px;
   border-radius: var(--radius-full);
-  background: linear-gradient(
-    135deg,
-    var(--color-accent-dark),
-    var(--color-pink)
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-image: var(--img-portada);
+  background-size: cover;
+  background-position: center top;
   box-shadow: var(--shadow-accent), 0 0 60px var(--color-pink-glow);
   position: relative;
   z-index: 2;
+  border: 3px solid rgba(129, 140, 248, 0.4);
 }
 
 .hero__initials {
-  font-family: var(--font-heading);
-  font-size: 3.2rem;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.04em;
+  display: none;
 }
 
 /* Anillos pulsantes */
@@ -969,54 +964,32 @@ ul {
   color: var(--color-accent);
 }
 
-/* Formulario */
-.contact__form {
+/* Botón WhatsApp primario */
+.btn--whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+  font-size: var(--fs-base);
+  padding: 1rem 2.25rem;
+}
+
+.btn--whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.45);
+}
+
+/* CTA centrado */
+.contact__cta {
   display: flex;
-  flex-direction: column;
-  gap: var(--sp-lg);
-  padding: var(--sp-xl);
-  background: var(--color-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  justify-content: center;
+  margin-bottom: var(--sp-2xl);
 }
 
-.form__field {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-xs);
-}
-
-.form__label {
-  font-size: var(--fs-sm);
-  font-family: var(--font-heading);
-  font-weight: 500;
-  color: var(--color-text-muted);
-}
-
-.form__input,
-.form__textarea {
-  width: 100%;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: 0.75rem 1rem;
-  color: var(--color-text);
-  font-family: var(--font-body);
-  font-size: var(--fs-sm);
-  outline: none;
-  resize: none;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.form__input::placeholder,
-.form__textarea::placeholder {
-  color: var(--color-text-faint);
-}
-
-.form__input:focus,
-.form__textarea:focus {
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px var(--color-accent-glow);
+/* Grid de tarjetas */
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-md);
 }
 
 /* ==============================================
@@ -1185,18 +1158,9 @@ ul {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Contacto: fila */
-  .contact__layout {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .contact__channels {
-    flex: 1;
-  }
-
-  .contact__form {
-    flex: 1.6;
+  /* Contacto: 2 columnas en grid */
+  .contact__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
